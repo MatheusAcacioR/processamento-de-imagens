@@ -1,0 +1,21 @@
+run("Close All")
+open("C:/Users/Matheus/Desktop/arquivos_Matheus/estagio/imagens-gsr/mrc-6c-2um/se/MRC 6C 2um.tif");
+setTool("zoom");
+setTool("line");
+run("8-bit");
+run("Set Scale...", "distance=300 known=1 unit=um global");
+run("Duplicate...", "title=MRC 6C 2um.tif");
+setTool("rectangle");
+makeRectangle(3, 0, 2037, 1749);
+setBackgroundColor(0, 0, 0);
+run("Clear Outside");
+run("Gray Scale Attribute Filtering", "operation=Opening attribute=Area minimum=20000 connectivity=4");
+run("8-bit");
+setAutoThreshold("Minimum dark");
+setOption("BlackBackground", true);
+run("Convert to Mask");
+run("Fill Holes");
+run("Find Edges");
+run("Analyze Particles...", "  show=Overlay display exclude");
+run("Merge Channels...", "c1=MRC-attrFilt c4=[MRC 6C 2um.tif] create");
+saveAs("Results", "C:/Users/Matheus/Desktop/arquivos_Matheus/estagio/imagens-gsr/mrc-6c-2um/se/protocolo-imagem.csv");
