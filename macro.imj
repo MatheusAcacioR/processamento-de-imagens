@@ -1,5 +1,5 @@
 run("Close All")
-open("C:/Users/Matheus/Desktop/arquivos_Matheus/estagio/imagens-gsr/mrc-6c-2um/se/MRC 6C 2um.tif");
+open("C:/Users/macaciorodrigues/Documents/processamento-de-imagens/images/MRC 6C 2um.tif");
 setTool("zoom");
 setTool("line");
 run("8-bit");
@@ -18,4 +18,4 @@ run("Fill Holes");
 run("Find Edges");
 run("Analyze Particles...", "  show=Overlay display exclude");
 run("Merge Channels...", "c1=MRC-attrFilt c4=[MRC 6C 2um.tif] create");
-saveAs("Results", "C:/Users/Matheus/Desktop/arquivos_Matheus/estagio/imagens-gsr/mrc-6c-2um/se/protocolo-imagem.csv");
+saveAs("Results", "C:/Users/macaciorodrigues/Documents/processamento-de-imagens/images");
