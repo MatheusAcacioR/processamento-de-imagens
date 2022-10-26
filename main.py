@@ -2,7 +2,7 @@ import numpy as np
 import cv2 
 from matplotlib import pyplot as plt  
 import time
-from ij import IJ as imj
+# from ij import IJ as imj
 
 """implementando Canny Edges
 edges = cv2.Canny(img1, 50, 240)
@@ -45,10 +45,12 @@ frame = cv2.resize(frame, (880, 780))
 frame = cv2.rectangle(frame, (0, 730), (879, 779), preto, -1)
 
 cv2.imshow("canvas", frame)
+cv2.waitKey(0)
 
-frame = imj.run(frame, "Gray Scale Attribute Filtering", "operation=Opening attribute=Area minimum=20000 connectivity=4");
 
-cv2.imshow("canvas", frame)
+# frame = imj.run(frame, "Gray Scale Attribute Filtering", "operation=Opening attribute=Area minimum=20000 connectivity=4");
+
+# cv2.imshow("canvas", frame)
 
 # kernel = np.ones((5,5),np.uint8)
 # erosion = cv2.erode(frame,kernel,iterations = 1)
@@ -57,7 +59,7 @@ cv2.imshow("canvas", frame)
 # thresh, se_thresh = cv2.threshold(se, 60, 255, cv2.THRESH_BINARY)
 
 
-cv2.imshow("canvas", frame)
+# cv2.imshow("canvas", frame)
 # print(frame.dtype)
 # cv2.waitKey(0)
 # cv2.imshow("canvas", opening)
